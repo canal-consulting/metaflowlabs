@@ -1,0 +1,8 @@
+.editorconfig
+.gitignore
+.vscode/
+.npmrc
+pnpm-lock.yaml
+pnpm-workspace.yaml
+Dockerfile
+README.md

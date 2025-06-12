@@ -1,0 +1,16 @@
+hero:
+  title: Metaflowlabs
+  description: Proposal for improving the community experience and expanding the ecosystem for Metaflow through high quality content, real-world example repositories, and OSS projects.
+  links:
+    - label: View Content
+      to: /learn
+      variant: primary
+    - label: Explore Projects
+      to: /projects
+      variant: info
+    - label: View Proposal
+      to: /proposal
+      variant: success
+
+sections:
+  - id: challenges
