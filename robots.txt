@@ -1,0 +1,6 @@
+# START nuxt-robots (indexable)
+User-agent: *
+Disallow: 
+
+Sitemap: https://metaflowlabs.nuxt.space/sitemap.xml
+# END nuxt-robots

@@ -1,0 +1,73 @@
+# Metaflowlabs
+
+> Metaflowlabs is an all-in-one development hub for Metaflow, providing in-depth guides, tutorials and reusable patterns for working with Metaflow.
+
+## Documentation Sets
+
+- [The full Metaflowlabs Landing-Page documentation, blog content for llms](https://metaflowlabs.nuxt.space/llms-full.txt): The complete Metaflowlabs documentation and blog posts written in Markdown (MDC syntax).
+
+## Projects
+
+- [Audience Identification](https://metaflowlabs.nuxt.space/projects/audience-identification): Identify channels and personas to target for content
+- [Newsletter Prep and Automation](https://metaflowlabs.nuxt.space/projects/newsletter-prep): Automation for creating newsletters from labs content
+- [Build with Me(taflow)](https://metaflowlabs.nuxt.space/projects/build-with-me): An interactive community series building Metaflow projects from scratch over several weeks.
+- [Draw the Owl](https://metaflowlabs.nuxt.space/projects/draw-the-owl): A series diving deep into fundamental Metaflow patterns, concepts, tips, and best practices.
+- [Generate initial content](https://metaflowlabs.nuxt.space/projects/write-guides-deep-dives): Create initial 4 weeks of content for launch
+- [From the Trenches](https://metaflowlabs.nuxt.space/projects/from-the-trenches): Deep dives into interesting community questions from Slack, resulting in solutions, write-ups, and videos.
+- [Slack Restructuring](https://metaflowlabs.nuxt.space/projects/slack-restructuring): Reorganizing the Metaflow Community Slack channels for better organization and collaboration.
+- [Metaflowlabs Launch](https://metaflowlabs.nuxt.space/projects/launch): Go live with regular series, slack restructuring + metaflowbot
+- [Proxy Metric Generation](https://metaflowlabs.nuxt.space/projects/proxy-metric-generation): Identify metrics to track community health and engagement & stand up reporting
+- [Slack Analysis/Reporting](https://metaflowlabs.nuxt.space/projects/slack-analysis): Analyze Slack data to inform content, identify and monitor engagement trends
+- [Content Templates](https://metaflowlabs.nuxt.space/projects/content-templates): Develop a set of standardized templates for metaflowlabs site content and YouTube.
+- [User Research](https://metaflowlabs.nuxt.space/projects/user-research): Interview users from Outerbounds and adjacent slack communities
+- [Content Generation Tooling](https://metaflowlabs.nuxt.space/projects/content-generation-tooling): Set up toolchain for content creation, e.g. saas tools, cicd, etc
+- [Metaflow Competitive Analysis/Reporting](https://metaflowlabs.nuxt.space/projects/metaflow-peers-analysis-and-reporting): Track Metaflow Growth Alongside Competing Projects
+- [Repository Automation](https://metaflowlabs.nuxt.space/projects/repository-automation): Set up IaC for repository bootstrapping
+- [Metaflowbot](https://metaflowlabs.nuxt.space/projects/metaflowbot): Develop slack bot for Metaflow
+
+## Learn
+
+- [Deep Dives](https://metaflowlabs.nuxt.space/learn/deep-dives): Build your baseline understanding of Metaflow.
+- [Understanding Metaflow Persistence: Artifacts, Datastores, and Best Practices](https://metaflowlabs.nuxt.space/learn/deep-dives/persistence): A comprehensive overview of how Metaflow handles data persistence, from `self` assignments and artifact management to datastore interactions, caching, and choosing the right storage strategies.
+- [Metaflow Datastore Internals: Caching and Resume](https://metaflowlabs.nuxt.space/learn/deep-dives/persistence/datastore-internals): Explore how Metaflow interacts with the datastore, enabling features like caching and resume.
+- [Patterns](https://metaflowlabs.nuxt.space/learn/patterns): Design patterns, best practices, and reusable solutions for common MLOps challenges using Metaflow.
+- [Guides](https://metaflowlabs.nuxt.space/learn/guides): Step-by-step tutorials and practical guides for using Metaflow features and integrations effectively.
+- [Open Source](https://metaflowlabs.nuxt.space/learn/open-source): Metaflowlabs OSS Projects
+- [Learn](https://metaflowlabs.nuxt.space/learn): Learn successful development patterns and best-practices for Metaflow.
+
+## Faq
+
+- [Mission](https://metaflowlabs.nuxt.space/faq/metaflowlabs/mission): Focused on building the Metaflow community and ecosystem, Metaflowlabs will:
+- [Website Content](https://metaflowlabs.nuxt.space/faq/metaflowlabs/website-content): Content will closely follow the Diataxis framework, consisting of:
+- [High Quality Example Projects](https://metaflowlabs.nuxt.space/faq/metaflowlabs/high-quality-example-repositories): All Pattern and Guide content (map to Diataxis How-to and Tutorial types) will be accompanied by repositories that will be available on GitHub when published. These repositories will be created from an IaC construct lib to ensure consistency based on the type, and will at least include a published GitHub Pages site and a revealjs presentation. Metaflowlabs will also build and maintain dedicated infrastructure repositories to support/extend the existing Metaflow Terraform modules.
+- [Ongoing YouTube series showcasing OB platform](https://metaflowlabs.nuxt.space/faq/metaflowlabs/ongoing-youtube-series): Metaflowlabs will produce several regular series of video content examples here aimed at showing Metaflow in action. These series will include:
+- [OSS Ecosystem Projects](https://metaflowlabs.nuxt.space/faq/metaflowlabs/open-source): Projects would allow community to contribute to new, greenfield projects. These could include:
+- [Consulting](https://metaflowlabs.nuxt.space/faq/services/consulting): The core business model will be in providing consulting services to targeting the OSS Metaflow folks in the community, with the website and other efforts hopefully leading to consistent flow of work. Will take all comers but will position these services around onboarding new orgs to Metaflow.
+- [Live Training](https://metaflowlabs.nuxt.space/faq/services/training): Different levels of training will be offered, ranging from day-0 material for engineering managers on how to successfully adopt Metaflow, to different levels of training ranging from the basics for business analysts on up to advanced training for ML platform engineers on building event-driven architectures with Metaflow.
+- [Video Courses](https://metaflowlabs.nuxt.space/faq/services/courses): Eventually extended content will be turned into paid video courses, which could be an opportunity to partner with OB through the platform. This would allow for more interesting content that would match real-world use cases rather than what can just be done locally. This kind of exposure to the platform would likely also lead to upsell opportunities.
+- [Content Coordination](https://metaflowlabs.nuxt.space/faq/relationship-to-ob/content-coordination): Having a separate entity to announce new OB features, with high-quality content and example repository projects, will amplify the marketing impact tremendously for Outerbounds. Having staggered releases of content, such as the following, generates a continual stream that would greatly boost SEO over a single announcement post:
+- [Consulting -> OB Product Feedback](https://metaflowlabs.nuxt.space/faq/relationship-to-ob/consulting-product): Following the DBT model, where they had a significant consulting arm up until recently, Metaflowlabs consulting and community engagement will provide a steady stream of feedback that is currently unavailable to Outerbounds. This works in the other direction as well, where consulting clients' needs that would be met by current OB features (e.g., observability features of OB through OpenTelemetry) would be natural upsell opportunities. As was the case with DBT, the consulting arm will likely drive business to the platform automatically.
+- [Showcase Outerbounds Platform](https://metaflowlabs.nuxt.space/faq/the-opportunity/showcase-ob-platform): A core component of Metaflowlabs will be ongoing community video series (tenative titles):
+- [Cover Blind Spots](https://metaflowlabs.nuxt.space/faq/the-opportunity/cover-blind-spots): Outerbounds have been excellent stewards of the Metaflow OSS project as a whole, but there are blind spots that could be better covered with the help of a separate entity. These include:
+- [In-house Difficulty](https://metaflowlabs.nuxt.space/faq/the-opportunity/hard-near-impossible-to-do-in-house): Consistently high-quality content creation cannot easily be done by committee, unless there are strong cultural pressures/policies in place around this kind of work. It is even harder to bolt-on this kind of work to an existing team, as it requires changing existing practices to prioritizing this work vs new feature development.
+- [Maximize Marketing Reach](https://metaflowlabs.nuxt.space/faq/the-opportunity/more-effective-marketing-reach): With an external entity focused on growing the OSS Metaflow community and ecosystem, Outerbounds marketing efforts can be focused on the platform itself. Marketing the*platform can be done with the existing team or with the help of an additional marketing hire; growing the community/ecosystem can't.
+- [Raise the Bar for Content](https://metaflowlabs.nuxt.space/faq/the-opportunity/documentation-consistency): Meaningful gaps in content coverage and inconsistent quality can emerge when there aren't dedicated resources available.
+- [Built with LLMs in mind](https://metaflowlabs.nuxt.space/faq/the-opportunity/built-for-llms): Nuxt provides excellent tooling for SEO and getting LLM-ready, through the Nuxt SEO and Nuxt LLMs projects. Nuxt LLMs in particular allow robots and users to extract content easily in the llms-txt format, see the example for this site here.
+
+## Challenges
+
+- [Current Challenges for Growth](https://metaflowlabs.nuxt.space/challenges/_section)
+- [Barriers to Entry](https://metaflowlabs.nuxt.space/challenges/barriers-to-entry): Getting to that lightbulb moment of what Metaflow can do for data scientists is more difficult than it should be
+- [Lack of Infrastructure Support](https://metaflowlabs.nuxt.space/challenges/lack-of-examples): State of infrastructure support for OSS Metaflow turns off ops teams, I have heard this personally several times at different orgs
+- [No Ecosystem](https://metaflowlabs.nuxt.space/challenges/no-ecosystem): Metaflow is effectively a monorepo, hard for people to initially engage with such a mature and fairly opinionated project with so much history
+- [Single Voice](https://metaflowlabs.nuxt.space/challenges/single-voice): Outerbounds is a fantastic steward of Metaflow but having only a single organization promoting the project has some issues
+- [Slack is Intimidating](https://metaflowlabs.nuxt.space/challenges/slack-not-beginner-friendly): Slack conversations lean towards advanced use-cases/topics, intimidating all but the bravest souls
+
+## ProposalPage
+
+- [Proposal](https://metaflowlabs.nuxt.space/proposal): Proposal
+
+## Routes
+
+- [Consulting Engagement](https://metaflowlabs.nuxt.space/routes/consulting): Explore a potential consulting engagement model.
+- [Embedded](https://metaflowlabs.nuxt.space/routes/embedded): Consider having an expert embedded within your team.

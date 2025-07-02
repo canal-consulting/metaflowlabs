@@ -1,0 +1,1056 @@
+# Audience Identification
+
+This requires some more thought, idea came from Metaflow not having any presence on Twitter -> what other channels exist where meaningful conversations in the domain are happening? Where do the influential hang out?
+
+Output of this would be analysis of
+
+Channels:
+
+- twitter
+- other slack chan/discord servers (rands, dbt, others?)
+
+Archetype / Personas:
+
+- "influencers" in domain
+
+Data sources?
+
+- Ask HN post
+- Rands
+- others?
+
+
+# Newsletter Prep and Automation
+
+- Tooling for newsletters, automate: new published content since last newsletter -> current newsletter
+- Vue components for newsletter signup
+
+
+# Build with Me(taflow)
+
+- Ongoing series where community initially suggests project and over the course of 4-6 weeks we build it from scratch
+- No development occurs outside of the sessions
+- Encourage community members to drive sessions
+- Have Outerbounds access for \~5-10 each session and showcase features
+
+
+# Draw the Owl
+
+- Series on fundamental Metaflow patterns and concepts, nothing is off limits
+- Tips/Tricks and best-practice for developing with Metaflow
+- Topics could include:
+
+  - Migrating from Jupyter Notebooks to Metaflow
+  - Using AI effectively with Metaflow
+  - Patterns for resusability (multi-part series): cards, resume, triggers
+  - Packaging Metaflow in a library
+  - CICD patterns for Metaflow
+  - Integrating with external events
+
+
+# Generate initial content
+
+
+
+# From the Trenches
+
+- Interesting Slack questions get deep dives
+- Meet with slack user, over 1-2 sessions and identify the issue and help them with a solution
+- Write up the solution and experience on metaflowlabs.com
+- Publish update to repository that isolates the issue and uses quarto for website/revealjs automation
+- Do a YT video with slack user where we go over issue and solution, take questions
+
+
+# Slack Restructuring
+
+- Reorganize Slack channels to improve organization and collaboration based on community feedback and observed usage
+  patterns.
+- Define clear purposes for key channels (e.g., #general, #help, #show-and-tell, #random).
+- Archive inactive or redundant channels.
+- Update channel topics and descriptions.
+- Announce changes and guidelines to the community.
+
+
+# Metaflowlabs Launch
+
+
+
+# Proxy Metric Generation
+
+This provides the base set of metrics to gauge Metaflow OSS community health / growth.
+
+[Apache Dev Lake is a place to start](https://devlake.apache.org/livedemo/OSSMaintainers/WeeklyCommunityRetro){rel="nofollow"}, focus more on DORA type metrics so not relevant but maybe some ideas there.
+
+### Things I track now
+
+- number of new repositories: not great proxy due to the barrier problem, i.e. no one can *easily* experiment with Metaflow / companies using Metaflow won't have public repositories.
+
+### Possible Metrics
+
+- articles written primarily about Metaflow across xyz channels
+- articles mentioning metaflow across xyz channels (positive / negative?)
+- twitter mentions (positive / negative?)
+- ?
+
+
+# Slack Analysis/Reporting
+
+This is a critical project that affects many downstream:
+
+- [Slack Restructuring](https://metaflowlabs.nuxt.space/projects/slack-restructuring)
+- [Metaflowbot](https://metaflowlabs.nuxt.space/projects/metaflowbot)
+- [Content Templates](https://metaflowlabs.nuxt.space/projects/content-templates)
+- [Generate initial content](https://metaflowlabs.nuxt.space/projects/write-guides-deep-dives)
+
+This will produce the partitions for the slack restructuring and will be critical for informing initial content.
+
+Analysis should be put into a flow + card or used to populate dashboard
+
+
+# Content Templates
+
+
+
+# User Research
+
+Follow up to audience identification, interview archetype/personas on state of Metaflow content / what they would like to see in content / types of content for each archetype/persona
+
+
+# Content Generation Tooling
+
+Lit review of the tooling available for content generation, scoped to written not video content
+
+
+# Metaflow Competitive Analysis/Reporting
+
+This is a direct follow-up to the Proxy Metric analysis, the same metrics can be applied to *X* competitive project and assembled into a Card / dashboard.
+
+- Show health relative to peer projects
+- Spike in another project could be meaningful (and something we can follow up on if its a trending HN post or similar)
+
+
+# Repository Automation
+
+Create initial Gold repository example, work backwards to automate for push-button creation from template
+
+One or more of:
+
+- custom Projen project type
+- terraform using github provider
+
+wrap in CLI
+
+
+# Metaflowbot
+
+Will require more scoping, should be able to get pretty far using off-the-shelf tools like wandbot
+
+- Metaflow is great fit, should be an OB article afterwards similar in scope to WandB examples highlighting metaflow+OB platform
+
+**Should pair with Eddie here**
+
+
+# Deep Dives
+
+![](https://metaflowlabs.nuxt.space/content/learn/first-pyramid.svg){width="700"}
+
+### About
+
+The baseline content type that will introduce concepts used in Patterns and Guides. Critically, these other content types cannot introduce concepts that do not have an associated Deep Dive. This will make sure that there is full coverage of concepts as more advanced topics are covered.
+
+#### Avoiding Content Duplication
+
+Since the surface area of Metaflow is so small and tidy, topics will have overlap with content from the official Metaflow docs and Outerbounds content but differ in significant ways:
+
+- Focus will be on practical application rather than *the what* (high level overview) and *the how* (API usage). Deep dive content will be framed in terms of actionable tips, calling out edge cases, confusing or unintuitive (for new users) aspects of the topic, and/or give a deeper treatment of the topic in order to gain mechanical sympathy for what is going on under the hood. Some examples:
+
+  - Metaflow documentation has an excellent resource for [Loading and Storing Data](https://docs.metaflow.org/scaling/data){rel="nofollow"} giving an overview of the topic and demonstrating the API
+  - Persistence article topics below do not overlap and are targeting best-practices (&#x2A;`self` vs `metaflow.S3`*), edge cases (*Advanced Data Patterns*), and deep treatment (*Datastore, Caching & Resume*, *Local vs Remote Datastore Backends*)
+
+### Paired Video Content
+
+Topics and articles are partitioned in such a way to make for interesting video content for the &#x2A;**1:1 Conversation**&#x2A; and &#x2A;**Panel Discussion*** types described in [the video section of the learn page](https://metaflowlabs.nuxt.space/learn#video&#x29;. I think the &#x2A;`self` vs `metaflow.S3`* article in particular would be an interesting panel discussion since basically everyone will navigate those tradeoffs differently. Not every deep dive will receive the video treatment and will be driven by what is confusing people on slack / github issues and on consulting engagements.
+
+### Custom Layout / Markdown Components (MDC)
+
+[MDC](https://content.nuxt.com/docs/files/markdown#mdc-syntax){rel="nofollow"} allows for the seamless integration of custom components within markdown, everything on the landing page below the hero section are examples of MDC (starting with the *Current Challenges for Growth* component). The article list below is also an example of an MDC (*Persistence*). This provides incredible flexibility as anything that can be done in Vue can become embedded within markdown content.
+
+#### 1. [Manim](https://www.manim.community/){rel="nofollow"}
+
+Manim would be an amazing tool for demonstrating Metaflow concepts as it provides tooling to present code progression alongside animation for the DAG. Having a custom library for these operations is a no-brainer (and Eddie is excited about this already), similar to the [ManimML project](https://github.com/helblazer811/ManimML){rel="nofollow"}.
+
+#### 2. Nuxt UI + shikijs twoslash
+
+[Nuxt UI offers a rock solid component suite](https://ui.nuxt.com/components){rel="nofollow"} that can be assembled into powerful MDCs for demonstrating Metaflow concepts, especially combined with the [shikijs](https://shiki.style/){rel="nofollow"} for displaying code. For example, imagine an article targeting **Migrating to Metaflow**. Here we want to show a progression of steps to take an analysis in a jupyter notebook and turn it into a flow.
+
+There are a number of ways to do this (one being showing a Manim animation completing the process), but one that I've thought about using @nuxt/ui components would be to combine shiki, which has excellent facilities for code highlighting, with the [Stepper component](https://ui.nuxt.com/components/stepper){rel="nofollow"} from Nuxt UI:
+
+![](https://metaflowlabs.nuxt.space/content/learn/stepper.png){width="600"}
+
+Nuxt UI has a pro license (generous one time payment terms, funds go to Nuxt team) that offers a lot of nice components that would make creating these custom MDCs even easier, with a lot of out-of-the-box MDCs that are all over the [nuxt.com site](https://nuxt.com/docs/getting-started/introduction){rel="nofollow"}.
+
+([This is also a pretty nice example that would be effective as an MDC](https://www.nuppets.dev/ai-commands){rel="nofollow"})
+
+---
+
+### Articles
+
+Other deep dive articles would include series on **Configuration and Environments**, **Card Development** etc. again, this type of content is the base that Patterns and Guides will be building upon.
+
+::feature-reference-list
+---
+items:
+  - id: "1"
+    label: Datastore, Caching & Resume
+    to: /learn/deep-dives/persistence/datastore-internals
+    description:
+      - Explore Metaflow's datastore internals.
+  - id: "2"
+    label: Using `self` vs the S3 client
+    description:
+      - When to use `self` vs `metaflow.S3` client for direct datastore access.
+  - id: "3"
+    label: Local vs Remote Datastore Backends
+    description:
+      - Understand the implications of performance and debugging between local
+        and remote operations.
+  - id: uas
+    label: Advanced Data Patterns
+    description:
+      - Dive into advanced techniques and patterns for managing large or complex
+        Metaflow artifacts.
+title: Persistence
+titleTo: /learn/deep-dives/persistence/
+---
+The example deep dive (*Datastore, Caching & Resume*) is not representative of the kind of content that will be created on site, the static images would be replaced by MDC components and the content itself would depend on the outcome of [Content Templates](https://metaflowlabs.nuxt.space/projects/content-templates) and [Tooling](https://metaflowlabs.nuxt.space/projects/content-generation-tooling)
+::
+
+::feature-reference-list
+---
+items:
+  - id: "1"
+    label: Using LLMs Effectively
+    description:
+      - The tools, techniques and prompting strategies to get the most out of
+        LLM development with Metaflow.
+  - id: "2"
+    label: Metaflow in notebooks
+    description:
+      - Learn how to effectively leverage Metaflow within Jupyter notebooks for
+        interactive development, experimentation, and seamless transition to
+        scalable flows.
+  - id: "3"
+    label: Packaging Metaflow
+    description:
+      - Use Hatch to package your Metaflow projects, managing dependencies, and
+        ensuring consistent environments for development and deployment.
+  - id: "4"
+    label: Testing Fundamentals
+    description:
+      - Explore essential strategies and patterns for testing your Metaflow
+        pipelines, ensuring reliability and correctness from development to
+        production.
+  - id: "4"
+    label: Metaflow CICD Basics
+    description:
+      - Understand foundational principles and techniques for integrating
+        Metaflow workflows into CI/CD pipelines for automated testing and
+        deployment.
+title: Metaflow Development
+---
+::
+
+
+# Persistence in Metaflow: Artifacts, Datastores, and Best Practices
+
+
+# Understanding Metaflow's Datastore: Internals of Caching and Resume
+
+Metaflow's interaction with its configured datastore isn't just a background detail; it's the engine driving some of its most powerful features—like robust data versioning, highly efficient caching, and the life-saving ability to resume flows. If you've ever wondered how Metaflow seems to magically pick up where it left off, or how it avoids recomputing steps unnecessarily, a look into its datastore mechanics will provide the answers. Let's delve into how Metaflow works with data behind the scenes.
+
+## The Power of Content-Addressed Storage
+
+At the heart of Metaflow's data management is &#x2A;*Content-Addressed Storage (CAS)**, this is the mechanism that fundamentally shapes how Metaflow handles every piece of data—or **artifact**—you create. In the CAS model, each artifact isn't identified by a filename or a path you choose, but by a unique cryptographic hash computed directly from its serialized content. Think of this hash as the artifact's fingerprint; it becomes its "address" or key within Metaflow's datastore.
+
+Why is this approach so effective? It offers several key benefits that you'll appreciate in your daily work:
+
+- **Automatic Deduplication**: Imagine your flow processes a large, static dataset in multiple steps, or perhaps you re-run a flow that uses the same initial data. If different steps or even related flow runs produce the exact same data (meaning they have the identical content hash), Metaflow is smart enough to store this data **only once**. This can lead to significant storage savings, especially when you're dealing with large datasets or complex models that might be shared or regenerated.
+- **Built-in Immutability and Versioning**: Since an artifact's identity *is* its content hash, any change to an object—no matter how tiny—will result in a brand-new hash. This means a new, distinct artifact is created in the datastore. The original remains untouched. This inherent **immutability** is crucial; it's the bedrock of Metaflow's robust versioning capabilities, ensuring that past results are stable and always reproducible.
+
+::note
+The concept of immutability in content-addressing is a powerful guarantee. Once an artifact is written to the datastore, it's set in stone. Any apparent "change" actually results in a new, versioned artifact, leaving the original intact. This is what allows you to confidently look back at past runs, knowing the data you see is exactly what was produced then. This stability is fundamental to tracking lineage and managing different data versions throughout your project's lifecycle.
+::
+
+To visualize this, consider how different data objects map to unique storage locations based on their content:
+
+![](https://metaflowlabs.nuxt.space/content/learn/datastore-internals-01.png){width="750"}
+
+It's not just your data artifacts that benefit from this. Metaflow also applies content-addressing to snapshot the **code package** associated with each run. This entire package (your flow script and any local modules) is bundled, hashed, and stored in the datastore. This ensures that you can always retrieve the exact version of the code that produced a specific set of artifacts, further bolstering reproducibility.
+
+## The Artifact Lifecycle: From Creation to Datastore and Back
+
+```python twoslash
+from metaflow import FlowSpec, step, current
+
+class MyIllustrativeFlow(FlowSpec):
+  @step
+  def start(self):
+    print(f"Starting flow {current.run_id}...")
+    self.next(self.process_data)
+
+  @step
+  def process_data(self):
+    # 1. Creation & Assignment: An object is created in memory.
+    raw_data = [1, 2, 3, 4, 5]
+    processed_data_object = [x * 2 for x in raw_data]
+
+    # This assignment tells Metaflow to manage 'my_processed_data'.
+    self.my_processed_data = processed_data_object
+    # self.my_processed_data now holds [2, 4, 6, 8, 10] in memory.
+
+    print(f"Step '{current.step_name}': Data processed: {self.my_processed_data}")
+    self.next(self.use_data)
+
+  @step
+  def use_data(self):
+
+    # 6. Access: Metaflow retrieves 'my_processed_data' for this step.
+    #    - Metadata service is queried for the artifact's location (hash).
+    #    - Byte stream is read from the datastore.
+    #    - Deserialized back into a Python object.
+    retrieved_data = self.my_processed_data
+    # retrieved_data is now [2, 4, 6, 8, 10], loaded from the datastore.
+
+    print(f"Step '{current.step_name}': Using data: {retrieved_data}")
+    doubled_again = [x * 2 for x in retrieved_data]
+    self.final_result = doubled_again
+    self.next(self.end)
+
+  @step
+  def end(self):
+
+    # 'final_result' would also be persisted after this step completes.
+    print(f"Step '{current.step_name}': Final result: {self.final_result}")
+    print(f"Flow {current.run_id} finished.")
+
+# Upon step 'process_data' completion:
+# 2. Serialization: `self.my_processed_data` (the list [2, 4, 6, 8, 10]) is serialized (e.g., pickled).
+# 3. Hashing: A content hash (e.g., SHA1) is computed from the serialized bytes.
+# 4. Persistence (Write to Datastore): The serialized bytes are written to the datastore,
+#    often using the hash as part of its storage key. This is a datastore write operation.
+# 5. Metadata Update: Metaflow's metadata service records info about this artifact:
+#    flow, run ID, step name, task ID, and its content hash.
+```
+
+When we talk about the "artifact lifecycle," we're describing the journey of a piece of data. This journey starts the moment you assign it to an attribute of self (like self.my\_data = some\_object) within a Metaflow step, continues as it's persisted in the datastore, and completes when it's retrieved for use in later steps or by external tools. Understanding this lifecycle, especially its interactions with the datastore, is key to grasping how Metaflow effectively manages data throughout your workflow.
+
+### Stages of the Artifact Lifecycle
+
+Let's break down the typical stages:
+
+1. **Creation & Assignment**: The lifecycle kicks off inside a step when a Python object is assigned to an instance variable of your flow class, for instance, `self.my_model = trained_model_object`. At this exact moment, the object exists purely in the memory of the task executing that step.
+2. **Serialization**: As soon as the step finishes successfully, Metaflow automatically takes all objects assigned to `self` (like `self.my_model`) and serializes them. This process, usually handled by Python's `pickle` module, converts your live Python objects into a byte stream. This byte stream format is what's suitable for storage and for sending across a network if needed.
+3. **Hashing**: Right after serialization, a content hash (e.g., a SHA1 hash) is computed from this byte stream. As we discussed under "Content-Addressed Storage," this hash acts as a unique fingerprint for the artifact's content.
+4. **Persistence (Write to Datastore)**: The serialized byte stream is then written to Metaflow's configured datastore (like Amazon S3 or a local file system). This is a critical datastore write operation. The artifact is typically stored in a way that its content hash forms part of its storage path or key, directly linking its unique identity to its physical location.
+5. **Metadata Update**: Simultaneously, Metaflow's metadata service (which could be running locally or be a remote service like the Metaflow Service) gets an update. This update logs essential information about the newly minted artifact: it links the artifact to the specific flow, run ID, step name, task ID, and, crucially, its content hash. This metadata acts like an index or a card catalog, allowing Metaflow to efficiently find and retrieve artifacts later on.
+6. **Access (Read from Datastore)**: When a subsequent step in your flow needs this artifact (e.g., it tries to access `self.my_model`), or when you access it using the Metaflow Client API (e.g., `Run('MyFlow/123').data.my_model`), the process is essentially reversed:
+   - Metaflow first consults the metadata service to find the location of the required artifact, using the recorded hash.
+   - It then retrieves the corresponding byte stream from the datastore. This is a datastore read operation.
+   - Finally, this byte stream is deserialized (unpickled) back into a Python object in the memory of the task or client environment that requested it. This makes `self.my_model` (or `run.data.my_model`) available again, with its original content intact.
+
+A vital aspect to remember is immutability. Once an artifact makes it to the datastore (Stage 4), it's considered unchangeable. If a step is re-run (perhaps due to a resume or a new run) and the value of self.my\_model changes, this will trigger a new serialization, generate a new hash, and consequently, a new, distinct artifact will be created and stored. The original artifact from the previous attempt remains untouched in the datastore, associated with its original task.
+
+The following diagram visually summarizes this lifecycle:
+
+![](https://metaflowlabs.nuxt.space/content/learn/datastore-internals-02.png){width="750"}
+
+This carefully orchestrated lifecycle ensures that your data is managed consistently, versioned effectively, and can be reliably passed between different parts of a Metaflow workflow, all underpinned by robust interactions with the datastore and the metadata service.
+
+::note
+When your Metaflow setup uses a remote datastore like Amazon S3, several of these interactions—such as uploading code packages, writing and reading artifacts, or any explicit S3 client calls within your steps—will involve network operations. The speed and efficiency of these operations can be influenced by factors like the size of your artifacts, your network bandwidth, and the current performance of S3.
+::
+
+How Metaflow Makes resume Possible
+
+One of Metaflow's most valued features, especially when you're building complex or long-running pipelines, is the ability to `resume` a flow that failed or was interrupted. Instead of having to restart the entire computation from the very beginning—which can be incredibly time-consuming and costly—`resume` allows the flow to pick up from the point of failure. This capability is a massive productivity booster. The `resume` mechanism is deeply connected to Metaflow's persistence strategy and relies on a few key components working together:
+
+### Key Components of Resumption
+
+1. **Step-as-Checkpoint**: As we've seen, every step in Metaflow inherently acts as a checkpoint. Upon the successful completion of any step, all its output artifacts (any data you've assigned to `self`) are durably persisted in the configured datastore. This ensures that the state of your flow is systematically saved at regular intervals.
+2. **Tracking Run State**: The Metaflow metadata service meticulously keeps track of the status (e.g., `running`, `completed`, `failed`) of each individual step within every run. This provides a clear, auditable record of the flow's progress and allows Metaflow to pinpoint exactly where a failure occurred.
+3. **Content-Addressing for Code and Data**: When you initiate a `resume` (e.g., by running `python my_flow.py resume`), Metaflow first examines the state of the previously attempted run. For each step, it performs a crucial comparison: it looks at the content hash of the current code for that step and the hashes of its input artifact dependencies, and compares them against what was recorded for any previous successful execution of that same step within the same run lineage.
+4. **Skipping the Already Done**: If the code for a step and its input artifacts (which are derived from successfully completed parent steps) haven't changed relative to a previously successful execution of that step in the current run lineage, Metaflow intelligently skips re-executing that step. It simply loads the previously computed output artifacts for that step directly from the datastore, presenting them to downstream steps as if the step had just run. This behavior is fundamental to `resume` and, as we'll see shortly, is also the core principle behind Metaflow's caching.
+5. **Resuming from the Point of Failure**: If a step had previously failed, the `resume` command will attempt to re-execute that specific failed step (and, naturally, all subsequent steps in the Directed Acyclic Graph, or DAG). Importantly, the input artifacts that this failed step requires are loaded from the datastore, ensuring it starts with the exact same state as its previous, unsuccessful attempt.
+
+::callout{icon="i-heroicons-light-bulb-solid" type="info"}
+The Core Benefit of resume: The most significant advantage of the resume feature is the substantial saving of computational time and resources. By cleverly avoiding the re-execution of parts of your workflow that have already completed successfully, you can iterate much faster, especially when debugging or dealing with transient issues.
+::
+
+Imagine this scenario:
+
+![Diagram illustrating flow resumption: Step A and B completed, Step C failed. On resume, Step A and B are skipped (outputs loaded from datastore), and execution restarts from Step C.](https://metaflowlabs.nuxt.space/content/learn/datastore-internals-03.png)
+
+It's the combination of automatic artifact persistence (checkpointing), detailed metadata tracking, and content-addressing for both your data and your code that makes this intelligent resumption possible. This allows you to build more resilient pipelines and iterate on your work with greater speed and confidence.
+
+Understanding Caching Behavior
+
+Metaflow's caching mechanism is another powerful feature designed to significantly speed up your workflow execution. It achieves this by cleverly avoiding the recomputation of steps whose code and inputs haven't changed since a previous successful run. This behavior shares its foundational principles with the resume functionality, relying heavily on content-addressing and the persistent nature of artifacts in the datastore.
+
+### How Caching Works
+
+Before executing any step in your flow, Metaflow performs an internal check. It tries to determine if an identical version of that step—considering its code, its input artifacts, and implicitly its execution environment (like Python library versions defined via @conda or @pypi decorators)—has been successfully executed before within the same flow lineage (i.e., for the same flow name).
+
+If all these conditions perfectly match a previously recorded successful execution, Metaflow achieves what we call a "cache hit." In this scenario:
+
+1. The actual code execution for the step is **skipped entirely**.
+2. Metaflow directly retrieves the previously computed and stored output artifacts for that step from the datastore. These artifacts are then made available to any downstream steps, exactly as if the step had just run anew.
+
+If any of these conditions do not match (a "cache miss"), the step is executed normally. Its new output artifacts are then persisted to the datastore, potentially becoming candidates for caching in future runs.
+
+### Conditions for a Cache Hit
+
+For Metaflow to decide to use a cached result for a step, the following conditions must generally hold true:
+
+- **Identical Code**: The content-hash of the current code for the step must be identical to the content-hash of the code from a previous successful execution of that step. Any change to your step's code will break the cache.
+- **Identical Input Artifacts**: The content-hashes of all input artifacts for the current attempt of the step must perfectly match the content-hashes of the input artifacts from that same previous successful execution. If any upstream data changes, this step (and subsequent ones) will likely recompute.
+- **Consistent Environment**: While not always hashed as a separate, explicit entity, the execution environment should be consistent. This includes factors like the Python version and, importantly, library versions managed by decorators like `@conda` or `@pypi`. Changes in these can lead to different code behavior or artifact serialization, implicitly causing a cache miss even if your direct step code hasn't changed.
+
+### Benefits of Caching
+
+- **Saves Precious Computation Time**: By skipping redundant computations for steps that haven't changed, caching can dramatically reduce the overall runtime of your flows. This is especially true for steps involving intensive processing, data loading, or model training.
+- **Conserves Computational Resources**: Avoiding re-execution means less demand on CPU, memory, and other resources. In cloud environments, this can translate directly into cost savings.
+- **Accelerates Iterative Development**: Caching shines during the development and debugging phases of your project.
+
+::callout{icon="i-heroicons-light-bulb-solid" type="info"}
+Speed Up Your Iterations with Caching: Caching is a huge boon when you're actively developing or refining a specific part of your flow, perhaps a downstream modeling step. You can re-run the entire flow, and Metaflow will quickly skip through all the earlier, unchanged steps, allowing you to get to the part you're working on much faster. This enables rapid experimentation and significantly quicker feedback cycles.
+::
+
+The caching logic can be visualized as follows:
+
+![](https://metaflowlabs.nuxt.space/content/learn/datastore-internals-04.png){width="500"}
+
+By smartly leveraging content-addressing and the robust persistence of artifacts, Metaflow's caching provides an intelligent way to optimize workflow execution, often without requiring any manual intervention or configuration from you, the developer.
+
+Wrapping Up: Why Datastore Internals Matter to You
+
+Metaflow's sophisticated dance with its datastore, built on principles like content-addressed storage and a meticulously defined artifact lifecycle, is far more than just an internal implementation detail. It's the very foundation of the framework's power, reliability, and developer-friendliness.
+
+### Key Features Enabled by Datastore Internals
+
+As we've explored, the ability to uniquely identify, immutably store, and efficiently retrieve every artifact and even the code itself is what enables key features that you likely use every day:
+
+- **Efficient Caching**: Saving you time and computational resources by intelligently skipping already-computed steps.
+- **Robust Flow Resumption (`resume`)**: Allowing you to pick up right where you left off after failures, making your development process more resilient.
+- **Reliable Versioning and Reproducibility**: Giving you confidence that you can always revisit past results and understand exactly how they were produced.
+
+### Empowering Your Workflow Development
+
+Understanding when and how Metaflow interacts with the datastore—from the initial packaging of your code to the persistence and retrieval of every single artifact—provides you with crucial insights. This knowledge helps in:
+
+- Predicting workflow behavior.
+- Understanding performance characteristics (e.g., why a step might be slow if it's frequently reading/writing large artifacts to a remote store).
+- Developing more effective debugging strategies.
+
+Ultimately, a solid grasp of these datastore internals empowers you to design more efficient, resilient, and debuggable Metaflow workflows. It allows you to fully harness the framework's capabilities to manage complex data pipelines with greater confidence and productivity.
+
+
+# Patterns
+
+![](https://metaflowlabs.nuxt.space/content/learn/second-pyramid.svg){width="700"}
+
+### About
+
+This content type maps somewhat closely to the [Platform Guides on the OB docsite](https://docs.outerbounds.com/3000){rel="nofollow"}, but will differ significantly in terms of execution and supporting content (Deep Dives, Videos, and GitHub repositories).
+
+The Patterns content will be narrowly focused and incorporate concepts from 1-2 deep dive articles, the examples below showcase this as they all have paired references from deep dive articles\* and will reflect real-world use cases that could be the basis of starter code for new projects that incorporate those ideas.
+
+\**besides the FastAPI example, I just included this because it demonstrates the small scope of this content type and is easy to imagine a trigger deep dive existing...so I threw it in*
+
+### Paired Video Content
+
+There are two main types of paired video media that I think make sense for this content type:
+
+#### 1. Walkthrough for Narrowly Focused Patterns
+
+For patterns where the content type is more narrowly focused on a specific use-case, like the &#x2A;**S3 Client for managing Hive-style partitions automatically*** example, the only Video content that makes sense really is the `Walkthrough`. See [the video section of the learn page](https://metaflowlabs.nuxt.space/learn#video) for detail and example of this type. Since the scope of this content is minimal, the video should be sub-10 minutes and be similar to the [Outerbounds playlist on tags](https://www.youtube.com/watch?v=DEmKaTI3MG4\&list=PLUsOvkBBnJBc1fcDQEOPJ77pMcE4CnNxc){rel="nofollow"}.
+
+#### 2. How-to Series for Development Patterns
+
+These include the &#x2A;**Introducing the notebook resume pattern*** example pattern below and involve development patterns that detail *how* to effectively use Metaflow. The [Draw the Owl](https://metaflowlabs.nuxt.space/projects/draw-the-owl) project will cover this use-case, but will involve either a 1:1 with a Metaflow learner where we cover the pattern at their pace or a group of learners. I think it would be great to use the Outerbounds platform for this kind of session as there is not a lot of media available currently of it out there currently.
+
+### Custom Layout / Markdown Components (MDC)
+
+Discoverability is probably the second most important aspect to a site like this only behind the quality of the content itself, so consideration of how to handle this effectively is going to be a high priority.
+
+This entails effective content tagging and providing a layout with the right amount of information density and filter options. I particularly like this component from [Vueuse](https://vueuse.org/functions.html){rel="nofollow"}:
+
+![](https://metaflowlabs.nuxt.space/content/learn/discoverability.png){width="650"}
+
+The detail page also has several MDCs that I think would be valuable in a content site, the examples below show context around changes to the function referenced in the detail page but I think having this for content itself would be valuable:
+
+![](https://metaflowlabs.nuxt.space/content/learn/discoverability-1.png){width="500"}![](https://metaflowlabs.nuxt.space/content/learn/discoverability-2.png){width="500"}
+
+---
+
+### Articles
+
+::feature-reference-list
+---
+items:
+  - id: "1"
+    label: S3 Client for managing Hive-style partitions automatically
+    description:
+      - Leverage Metaflow's S3 client to efficiently organize your data in S3
+        automatically.
+  - id: "2"
+    label: Create endpoints from deployed flows with FastAPI
+    description:
+      - Learn to expose your deployed flows as scalable API endpoints using
+        FastAPI.
+  - id: "3"
+    label: Introducing the notebook resume pattern
+    description:
+      - Discover a pattern for building complex flows one step at a time within
+        notebooks with Metaflow's resume.
+  - id: "4"
+    label: Adding flow CI with GitHub Actions
+    description:
+      - Stand up continuous integration for Metaflow projects using GitHub
+        Actions
+title: null
+---
+::
+
+
+# Guides
+
+![](https://metaflowlabs.nuxt.space/content/learn/full-pyramid.svg){width="700"}
+
+### About
+
+Guides are the content type that I think is the most sorely needed for growing Metaflow, and with the proper tooling and automation in place it will be possible to rapidly create Metaflow guides that maintain a high level of quality. [Jacopo's excellent write up](https://github.com/jacopotagliabue/you-dont-need-a-bigger-boat){rel="nofollow"} is the size and scope that I'm thinking of when it comes to guides, maybe with a bit fewer moving parts (unless it's a multipart series).
+
+Guides have the following qualities that distinguish themselves from Patterns:
+
+- Standalone repository with GitHub Pages site
+- Video content is not optional, see below
+- Must incorporate concepts from existing Patterns, which in turn are scoped to 1-2 Deep Dives. No new concepts can be introduced without proper coverage
+- Where possible, Guides should be plucked from the community (Slack, GH Issues), ripped from the headlines (e.g. interesting HN), or demonstrate internal use cases of Metaflow at OB or Labs
+
+### Paired Video Content
+
+Guides will have at least one piece of video media, with the `Walkthrough` type being the minimum as described in the layout section below. Additionally, guides would benefit from additional video media depending on where the idea originated from or how big of a bite it is:
+
+- ***[Build with Me(taflow)](https://metaflowlabs.nuxt.space/projects/build-with-me)***: Larger guide content covered from the ground up having a Metaflow learner (or learners) drive the session
+- ***1:1 Conversation***: If originated from the community, community member drives the solution with commentary from me
+- ***Panel Discussion***: Can see this type being applicable too for certain guides, especially those demonstrating triggers
+
+### Custom Layout / Markdown Components (MDC)
+
+This content type will require the most research and thought on how to present the material in an engaging and effective way for learning. I don't have a great idea of this yet but I do like how [deeplearning.io](https://learn.deeplearning.ai/){rel="nofollow"} handles this:
+
+![](https://metaflowlabs.nuxt.space/content/learn/deeplearning.png)
+
+I don't think having a notebook environment would be applicable here but having the side-by-side of videos and the content *could* be an effective way to communicate ideas and providing reference immediately. I also like having a tutorial being split into chapters, especially for more in-depth examples like Jacopo's bigger boat repo.
+
+Usually there are only a number of concepts you really want to hit on with longer tutorials (see the [diataxis write up on tutorials](https://diataxis.fr/tutorials/#tutorials){rel="nofollow"} for reference here), so having paired content and video explanation for each of the important aspects would be a nice way to handle this (along with an overview / landing page per guide).
+
+---
+
+### Articles
+
+::feature-reference-list
+---
+items:
+  - id: "1"
+    label: Triggering Metaflow from S3 events
+    description:
+      - Learn how to create basic event-driven architectures on AWS with
+        Metaflow.
+  - id: "2"
+    label: Deploy your flow safely with a GitOps pipeline
+    description:
+      - This would have variants for GHA and ArgoCD
+title: null
+---
+::
+
+
+# Open Source
+
+### About
+
+A few of the current challenges that I've identified (and have been echoed by others) are around lack of ecosystem/infrastructure support and the high bar for contributing to official Metaflow repositories within the Netflix organization.
+
+Making it easier to contribute and have ownership in Metaflow would go a long ways to improving the health of the OSS project by increasing the number of vocal supporters (e.g. contributors), reduce the friction / increase agency in managing Metaflow for ops teams, and benefiting new Metaflow users through the addition of tools that directly target their experience.
+
+There are obvious tradeoffs involved here, especially with open source infrastructure projects, but these are navigatable through the maturity-level in which projects get released as OSS. Using the examples below, &#x2A;**CDK / CDKTF Construct Libraries**&#x2A; and &#x2A;**Custom Projen Projects**&#x2A; would have a much, much higher bar than &#x2A;**Metaflow MCP Server***. This is due to the obvious reasons of non-familiarity with the toolchain ([projen](https://projen.io/){rel="nofollow"} and Typescript), as well as the APIs need to be close to 1.0 stable before opening it up.
+
+(Projects using the core construct libraries can be open sourced immediately)
+
+This is demonstrated by the quality difference in the following projects:
+
+- [generative-ai-cdk-constructs](https://github.com/awslabs/generative-ai-cdk-constructs){rel="nofollow"}: primitives and higher-level constructs for genai, stable API providing integration across aws services
+- [cdk-eks-blueprints](https://github.com/awslabs/cdk-eks-blueprints){rel="nofollow"}: providing primitives for packaging add-ons, configurable for new / existing clusters
+- [automate-mlops-personalize-cdk-pipeline](https://github.com/aws-samples/automate-mlops-personalize-cdk-pipeline){rel="nofollow"}: simple construct library as a one-off
+
+### Paired Video Content
+
+Open source projects would not have any video content type associated with it officially (no requirement like other content). However, depending on community feedback I can see different video content working week with OSS:
+
+- ***Walkthrough***: This type has the highest risk, especially if the project is actively being developed, but can see walkthrough content being valuable if regularly updated (maj release / new feature) and if the project is popular enough to warrant the effort.
+- ***Panel Discussion***: Panels could be interesting to scope new projects, show how a project is being used out in the wild (e.g. `Metaflow MCP Server`), or gain feedback on existing features / solicit new functionality. This would be especially useful for infrastructure-based projects like `CDK / CDKTF Construct Libraries` and `Custom Projen Projects`
+- ***1:1 Conversation***: Useful for introducing a project using the Teacher / Student archetypes in conversation. Would cover the high-level purpose of the project and demonstrate APIs that are not likely to change often (e.g. `Create-Metaflow-App`, `Flow Builder`)
+- ***Series***: A regular series where a community member drives a simple new feature / performs a PR review etc. could be a lot of fun. Can alternatate between a scoping session -> implementation -> review for the new feature.
+
+---
+
+### Custom Layout / Markdown Components (MDC)
+
+I really like the components that [Nuxt has for integrations](https://nuxt.com/modules?category=Libraries){rel="nofollow"}, discoverability is excellent with the search / card functionality being absolutely seamless (and a rudimentary version of this is already done in the [projects page](https://metaflowlabs.nuxt.space/projects), but the inspiration for this was Vueuse not the nuxt website) :
+
+![](https://metaflowlabs.nuxt.space/content/learn/oss-1.png)
+
+I also love the detail page, showing contributors + recency detail:
+
+![](https://metaflowlabs.nuxt.space/content/learn/oss-2.png)
+
+Each project would have its own repository + GitHub Pages website so can borrow from this heavily (for the detail page, may be silly to do right away if there are only 3 projects for the search/landing page so would have a more simple static card page)
+
+---
+
+### Projects
+
+::feature-reference-list
+---
+items:
+  - id: "1"
+    label: CDK / CDKTF Construct Libraries
+    description:
+      - Written in typescript, use jsii to publish to pypi, npm, maven, go
+        module, and/or as terraform modules.
+  - id: "2"
+    label: Metaflow MCP Server
+    description:
+      - Community-driven MCP server for Metaflow, ask questions from the client
+        using natural language.
+  - id: "3"
+    label: Custom Projen Projects
+    description:
+      - Bootstrap new infrastructure / python package for Metaflow using custom
+        constructs.
+  - id: "4"
+    label: Flow Builder App
+    description:
+      - Tauri application for visually constructing DAGs / generate from
+        notebook.
+  - id: "5"
+    label: Create-Metaflow-App
+    description:
+      - TUI for boostrapping new Metaflow projects.
+  - id: "6"
+    label: Curated Library for Cards
+    description:
+      - Pip-installable library for commonly used / useful cards.
+  - id: "7"
+    label: VSCode extension for OSS Metaflow
+    description:
+      - Observability tools for Metaflow resources, simple push button workflows
+        for common CLI tasks.
+title: null
+---
+This is just a sample of possible projects that could be driven from the labs organization. The goal is to provide opportunities for community members to contribute to greenfield projects and build the ecosystem.
+::
+
+
+# Metaflowlabs Content
+
+Importantly, Metaflowlabs content is not a replacement for the official Metaflow documentation or the Outerbounds guides
+but rather a complement. In fact, for proper SEO and discoverability the content here will be cross-linked with the
+official documentation and guides. The content here will be geared towards real-world examples on topics that
+are currently missing, and to do that will also provide a deep treatment of basic Metaflow concepts and common patterns
+to serve as a foundation.
+
+The overall goal in terms of tone and presentation style is to approach and maintain 3Blue1Brown-level of simplicity and
+clarity-Metaflow is delightfully simple with a small surface area so it a great vehicle to do this. I've spent the
+last 3+ years teaching this content to less technical audiences so that experience will guide how I cover the material.
+
+## Website
+
+The different types of content are heavily influenced by the [Diataxis framework](https://diataxis.fr/){rel="nofollow"}, which provides
+a
+systematic approach to creating technical
+documentation split between four pillars each serving a specific user need and learning context:
+
+![Illustration of the Diataxis framework pillars](https://metaflowlabs.nuxt.space/diataxis.png)
+
+---
+
+| Diataxis Pillar | Metaflowlabs Name | Primary Goal    | User Need             | Content Structure                                  | Metaflow Example                                                                      |
+| --------------- | ----------------- | --------------- | --------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Explanation     | Deep Dives        | Understanding   | Gain deeper knowledge | Conceptual background, reasoning, context          | *What happens when you `self`*, *Introduction to Environments*, *Effective Branching* |
+| How-to          | Patterns          | Problem-solving | Solve a specific task | Task-oriented instructions, recipes, code examples | *Using Notebooks*, *FastAPI and Metaflow*, *Migrating to Metaflow*                    |
+| Tutorials       | Guides            | Learning        | Understand a topic    | Step-by-step guides, practical exercises           | *Triggering flows from S3 Events*                                                     |
+
+---
+
+Each content type will be indexed and available as llm.txt files for easy consumption from LLM scrapers and other
+tools (see footer).
+
+## Video
+
+Most content from all three content types above will have paired video content that will be published along with website
+content. In addition to the paired content to the Diataxis pillars above, there will be regular community series that
+will have their own dedicated pages within the Metaflowlabs site (see /projects for details). All videos will be
+published to the OB and/or
+Metaflowlabs YouTube
+channels.
+
+| Type             | Pair                 | Format                                                                                               | Example                                                                                                                                 |
+| ---------------- | -------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 1:1 Conversation | Deep Dives           | Conversation between learner and host on the topic                                                   | [Bits and Booze](https://www.youtube.com/playlist?list=PLNXkW_le40U6qleRbjWBxz6RTfwJ8Z2E5){rel="nofollow"}                              |
+| Panel Discussion | Deep Dives, Patterns | Group of experienced users detail experience with topic                                              | [Comparing ZenML, Metaflow, and all the other DAG tools](https://www.youtube.com/watch?v=W6hpEO80q20){rel="nofollow"}                   |
+| Walkthrough      | Patterns, Guides     | Host does detailed walkthrough of website example, extra time spent on common pitfalls or edge cases | [Deconstructing "The EventBridge ETL" AWS Serverless Architecture Pattern](https://www.youtube.com/watch?v=8kg5bYsdem4){rel="nofollow"} |
+| Series           |                      | Recording of ongoing community series                                                                |                                                                                                                                         |
+
+## Repository
+
+The *Pattern* and *Guide* types will also be paired with repository content that will be available immediately upon
+publication of the website material.
+
+| Type           | Pair     | Format                                                                  | Example                                                                                                                                     |
+| -------------- | -------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Subdirectory   | Patterns | Self-contained example within larger repository with detailed README.md | [Sagemaker Examples](https://github.com/aws/amazon-sagemaker-examples){rel="nofollow"}                                                      |
+| New Repository | Guides   | In-depth example with GitHub Pages site with Revealjs presentation      | [aws-samples/aws-genai-conversational-rag-reference](https://github.com/aws-samples/aws-genai-conversational-rag-reference){rel="nofollow"} |
+
+
+# Mission
+
+Focused on building the Metaflow **community and ecosystem**, Metaflowlabs will:
+
+- provide learning resources for users at all levels
+- showcase real-world use cases and patterns that are currently missing
+- help manage the community through regular series on YouTube and other platforms.
+
+
+# Website Content
+
+Content will closely follow the [***Diataxis framework***](https://diataxis.fr/){rel="nofollow"}, consisting of:
+
+- In-depth treatment of foundational concepts.
+- How-to guides that are immediately actionable.
+- Deep-dive tutorials covering a range of real-world use cases.
+
+This material will **supplement rather than duplicate** the official docs and Outerbounds resources. The goal will be to provide *3Blue1Brown*-level of quality (not in the use of Manim as an education tool, but in terms of clarity and focus).
+
+
+# High Quality Example Projects
+
+All **Pattern** and **Guide** content (map to Diataxis How-to and Tutorial types) will be accompanied by repositories that will be available on GitHub when published. These repositories will be created from an **IaC construct lib** to ensure consistency based on the type, and will at least include a published **GitHub Pages site** and a **revealjs presentation**. Metaflowlabs will also build and maintain dedicated **infrastructure** repositories to support/extend the existing **Metaflow Terraform modules**.
+
+
+# Ongoing YouTube series showcasing OB platform
+
+Metaflowlabs will produce several regular series of video content [examples here](https://metaflowlabs.nuxt.space/learn#video) aimed at showing Metaflow in action. These series will include:
+
+- Video supplements to all three content types.
+- Series pairing with community members on common problems.
+- Building non-trivial Metaflow projects over several episodes.
+- Hosting panel discussions on different aspects of using Metaflow in the wild.
+
+These series would also be an excellent opportunity to showcase the **OB platform** in action.
+
+
+# OSS Ecosystem Projects
+
+Projects would allow community to contribute to new, greenfield projects. These could include:
+
+- Reusable infrastructure in the form of **Terraform modules**. These would extend rather than supplant the OB maintained modules.
+- **CDK constructs** providing blueprints for interfacing Metaflow with external services. Like this [typescript Metaflow construct library](https://github.com/bcgalvin/metaflow-cdk){rel="nofollow"} from 4+ years ago, also [available on pypi](https://pypi.org/project/cdk-metaflow/){rel="nofollow"}.
+- Reference architectures for common use cases (e.g., **DBT**).
+- Interesting standalone projects featuring Metaflow being used in ways outside of the norm (e.g. streaming)
+
+Other projects could include:
+
+- Standalone libraries for bootstrapping Metaflow projects, **create-react-app** style.
+- Tauri app providing a flow-builder UI for prototyping differrent architectures. Could be extended further with:
+
+  - LLM tooling to convert notebook to flow
+  - Environment linter, checking for issues such as flows with incompatible pandas versions within steps
+- Other useful tools focused on dev experience
+
+
+# Consulting
+
+The core business model will be in providing **consulting services** to targeting the **OSS Metaflow** folks in the community, with the website and other efforts hopefully leading to consistent flow of work. Will take all comers but will position these services around onboarding new orgs to Metaflow.
+
+At a certain point, the cost of my services/retainer vs the **OB platform** will naturally lead to clients to transition to Outerbounds.
+
+
+# Live Training
+
+Different levels of training will be offered, ranging from **day-0 material** for engineering managers on how to successfully adopt **Metaflow**, to different levels of training ranging from the basics for business analysts on up to advanced training for ML platform engineers on building event-driven architectures with **Metaflow**.
+
+
+# Video Courses
+
+Eventually extended content will be turned into **paid video courses**, which could be an opportunity to partner with **OB through the platform**. This would allow for more interesting content that would match **real-world use cases** rather than what can just be done locally. This kind of exposure to the platform would likely also lead to **upsell opportunities**.
+
+
+# Content Coordination
+
+Having a separate entity to announce new **OB features**, with **high-quality content** and **example repository projects**, will amplify the marketing impact tremendously for Outerbounds. Having staggered releases of content, such as the following, generates a continual stream that would greatly boost SEO over a single announcement post:
+
+1. **OB feature announcement**
+2. **Metaflowlabs blog post**
+3. **Metaflowlabs Repository**
+4. **OB YouTube** etc.
+
+This material can be ready to go well ahead of time so this coordination would be easy to do and benefit both entities.
+
+
+# Consulting -> OB Product Feedback
+
+Following the **DBT model**, where they had a significant consulting arm up until recently, Metaflowlabs consulting and community engagement will provide a steady stream of feedback that is currently unavailable to Outerbounds. This works in the other direction as well, where consulting clients' needs that would be met by current **OB features** (e.g., observability features of **OB** through **OpenTelemetry**) would be natural **upsell opportunities**. As was the case with **DBT**, the consulting arm will likely drive business to the **platform** automatically.
+
+
+# Showcase Outerbounds Platform
+
+A core component of Metaflowlabs will be ongoing community video series (tenative titles):
+
+- [Draw the Owl](https://metaflowlabs.nuxt.space/projects/draw-the-owl)
+- [Build with Metaflow](https://metaflowlabs.nuxt.space/projects/build-with-me)
+- [From the Trenches](https://metaflowlabs.nuxt.space/projects/from-the-trenches)
+
+The focus of each is on using Metaflow in a real-world capacity, and would have community members co-lead the sessions.
+
+There is currently a lack of content available of what the Outerbounds platform actually is, features, and what it provides over managing OSS Metaflow. These series represent an opportunity to change that by having 5-10 community members sign up for slots and have the session be run on an ephemeral OB cluster (with setup handled beforehand so the experience is seamless once we are recording).
+
+
+# Cover Blind Spots
+
+Outerbounds have been excellent stewards of the Metaflow OSS project as a whole, but there are blind spots that could be better covered with the help of a separate entity. These include:
+
+- **Infrastructure support** and examples for **OSS Metaflow**.
+- New user content and tutorials.
+- **High-quality example repositories** covering different aspects of the **DS project lifecycle**.
+
+These are all areas where it would be a direct interest for Metaflowlabs to cover, but for reasons could conflict with the Outerbounds product roadmap. Not covering these areas hurts adoption of Metaflow in the long run, so having Metaflowlabs work on these would improve the long-term health of the project and not affect Outerbounds product development.
+
+
+# In-house Difficulty
+
+Consistently **high-quality content creation** cannot easily be done by committee, unless there are strong cultural pressures/policies in place around this kind of work. It is even harder to *bolt-on* this kind of work to an existing team, as it requires changing existing practices to prioritizing this work vs **new feature development**.
+
+
+# Maximize Marketing Reach
+
+With an external entity focused on growing the **OSS Metaflow community and ecosystem**, Outerbounds marketing efforts can be focused on the **platform** itself. Marketing the\*platform can be done with the existing team or with the help of an additional marketing hire; growing the community/ecosystem can't.
+
+
+# Raise the Bar for Content
+
+*Meaningful gaps in content coverage and inconsistent quality can emerge when there aren't dedicated resources available.*
+
+Having a separate entity primarily focused on generating content in support of OSS Metaflow would benefit both Metaflow\.org documentation and Outerbounds.com content:
+
+**Metaflow\.org**:
+
+- Ensure Metaflow API coverage in documentation (e.g. missing decorators): lack of coverage hurts llm-generated Metaflow code
+- Coordinate on authoring [reference material](https://diataxis.fr/reference/){rel="nofollow"} that documentation site is lacking or could be improved. Content that does not fit in Outerbounds or Metaflowlabs
+
+**Outerbounds**:
+
+- Shared use of content and IaC repository templates to maintain consistency
+- Partner on content review processes to ensure quality
+
+
+# Built with LLMs in mind
+
+Nuxt provides excellent tooling for SEO and getting LLM-ready, through the [Nuxt SEO](https://nuxtseo.com/){rel="nofollow"} and [Nuxt LLMs](https://nuxt.com/modules/llms){rel="nofollow"} projects. Nuxt LLMs in particular allow robots and users to extract content easily in the llms-txt format, [see the example for this site here](https://metaflowlabs.nuxt.space/llms-full.txt).
+
+It is also possible to include the Metaflow API through [Nuxt Content's github source](https://content.nuxt.com/docs/collections/sources#repository){rel="nofollow"}. This could be used to pull from metaflow docs repository to include that material into the llms.txt, but not expose it on the labs site to avoid duplication. Alternatively could create a custom source that would run the Metaflow stubs command / clone and run pyright etc. Lot of flexbility here.
+
+
+# Current Challenges for Growth
+
+
+
+# Barriers to Entry
+
+*Getting to that lightbulb moment of what Metaflow can do for data scientists is more difficult than it should be*
+
+- Local Metaflow development (without a remote backend) is not a good first impression to the project, especially for inexperienced users
+- The tutorials have not been meaningfully updated since initial release, are not engaging for new users
+- There is not much content / media available demonstrating the Outerbounds platform
+
+
+# Lack of Infrastructure Support
+
+*State of infrastructure support for OSS Metaflow turns off ops teams, I have heard this personally several times at different orgs*
+
+:nuxt-img{alt="Screenshot from Rands Leadership Slack" src="https://metaflowlabs.nuxt.space/challenges/slack.png"}
+
+Quote from the Rands Leadership slack community (35k+ members), on the #devops channel (5k+ members)
+
+- Independent deployability is a key factor when evaluating any new technology; Metaflow not having a seamless experience absolutely hurts adoption and lowers confidence in the project
+- Only most basic examples exist in the terraform module repository, long turnaround for feature requests
+- No examples interfacing Metaflow infrastructure with external events
+
+
+# No Ecosystem
+
+*Metaflow is effectively a monorepo, hard for people to initially engage with such a mature and fairly opinionated project with so much history*
+
+Despite this, there is tremendous opportunity in growing the community through fostering an ecosystem around:
+
+- Creating sharable flows, extensions (e.g. rock-solid single purpose composable flows, like slack or message queue integrations)
+- Hub for flows, plugins and starter templates representing best-practices for common patterns
+- OpenAPI tooling to allow for easy integration with non-python clients, automatic documentation through swagger, and deployment directly from the spec
+
+
+# Single Voice
+
+*Outerbounds is a fantastic steward of Metaflow but having only a single organization promoting the project has some issues*
+
+- The challenges outlined above lead to the unhappy situation where the vast majority of conference talks, blogs, and tutorials all come exclusively from Outerbounds
+- This hurts SEO, which is increasingly important with more powerful AI tooling for deep web search becoming widely available
+- Having other organizations with a business model built around Metaflow would improve the perception of project health and support
+
+
+# Slack is Intimidating
+
+*Slack conversations lean towards advanced use-cases/topics, intimidating all but the bravest souls*
+
+- Conversations can easily get lost in the noise with the single #ask-metaflow channel. Longer discussions typically lean
+  more towards the advanced topics, unintentionally scaring off new users.
+- The single channel negatively affects the searchability of the content, and makes it difficult to find answers to
+  questions and leading to more repeated questions being asked
+- Lack of channels make it less likely for community members to contribute answers and build domain ownership (e.g.
+  pinned messages/files)
+- I regularly have data scientists DMing me directly instead of asking questions publicly, these sidebar conversations
+  are not searchable/discoverable for others.
+
+
+# Proposal
+
+## Background
+
+Metaflowlabs is premised on the following hot takes that I have developed over the last \~7 years through
+managing Metaflow infrastructure, onboarding orgs to Metaflow, teaching data scientists how to use Metaflow, overall
+thinking about Metaflow:
+
+- There is demand from the community for high quality Metaflow content and examples
+- There is an increasing number of credible alternative open source projects that overlap with Metaflow
+- The lack of high quality content and real-world example projects hurts adoption of Metaflow vs these credible alternatives
+- There exists possible conflicts for Outerbounds to produce certain types of content and examples
+
+The last point deserves a bit of clarification. I'm currently
+reading [The Idea Factory: Bell Labs and the Great Age of American Innovation](https://www.amazon.com/Idea-Factory-Great-American-Innovation/dp/0143122797/ref=sr_1_1?dib=eyJ2IjoiMSJ9.dZIV-k0vw9usKuoTVml5tS3kxHQnQ1EU7XRjuSqNoP9YKVS2UcKyQjgMx_sNpidcPCaKzDVgkfohnzFBefxzx_YB7vK0gC-MziuAmtPtOLY.E4_hoqFoQKSUtefESUfmdFM5d3e0dM1MHQ8eEEbr4gQ\&dib_tag=se\&hvbmt=%7BBidMatchType%7D\&hvdev=c\&keywords=bell+labs+the+idea+factory\&qid=1748855019\&s=books\&sr=1-1){rel="nofollow"},
+and while the parallel may be a bit of a stretch I'm going to try to make it work. The magic of Bell Labs
+was in that organizations ability to perform fundamental research (including the S language by John Chambers, which
+became R); and its downfall was in large part due to shifting its focus away from long-term, fundamental research toward
+short-term, product-driven development.
+
+The connection I am attempting to make is that Outerbounds, while being amazing stewards of Metaflow, has a disincentive to spend scarce
+resources on activities that only target the growth of the OSS project, such as beginner content or infrastructure example projects, when
+there are competing demands for new feature development or content targeting the OB platform, that more directly generate revenue.
+
+#### "Fundamental Research"
+
+To be clear, I'm not saying this is a bad thing in any way, it is just the reality of building a business on open source. The idea that I'm banking on here is that having a separate entity focused exclusively on building the community can be a lucrative endeavour on its own, while also having the happy side effect of greatly benefiting Outerbounds at the same time.
+
+---
+
+## Deliverables
+
+The [/projects page](https://metaflowlabs.nuxt.space/projects) outlines a possible roadmap (although I haven't written the individual task descriptions yet since that scoping will require your input), this is not broken out as sprint tasks per-se but at a higher level to illustrate the type of work I'm thinking about. That being said, although I target 12 weeks to launch, I want to call out that there are a number of deliverables over that span that would benefit Outerbounds along the way:
+
+1. [Slack Analysis and Reporting](https://metaflowlabs.nuxt.space/projects/slack-analysis): Would be initial EDA and further analysis on the OB slack data, followed by ETL w dashboard or other tooling if warranted. This analysis would help inform labs content and how to [partition #ask-metaflow on launch](https://metaflowlabs.nuxt.space/projects/slack-restructuring)
+2. [Repository Automation](https://metaflowlabs.nuxt.space/projects/repository-automation&#x29;: This is IaC for quickly bootstrapping new repository examples, reducing the steps as much as possible to go from &#x2A;*"saw this cool python thing on HN"*&#x2A; to &#x2A;*"here's the repository for that cool thing using Metaflow"**.
+3. [Metaflowbot](https://metaflowlabs.nuxt.space/projects/metaflowbot): Idea is that this should be available before launch for testing using one of the more mature and documented bots as a starting point, such as [wandbot](https://github.com/wandb/wandbot){rel="nofollow"}
+
+Again, the projects list is just one possible roadmap and can be adjusted to include deliverables that benefit OB more directly.
+
+---
+
+## Paved Paths
+
+I want my next career step to involve working on Metaflow full-time in some capacity since it's been such a central part
+of my career. In that time I've onboarded Metaflow at 4 different orgs, supported dozens of data scientists through 100+ 1:1s on
+their Metaflow projects.
+
+Based on that experience, I think the highest-leverage activity for me is around this *fundamental
+research* aspect and growing the community through the kind of work I've outlined throughout this resource. Presented
+below are just two possible paths for that:
+
+::possible-routes-tabs
+::
+
+
+# Consulting Engagement
+
+#### Consulting
+
+This path would be a full-time 12-week engagement to bootstrap Metaflowlabs, allowing labs to be mostly self-sufficient\* afterward through offering services from the landing page such as:
+
+- Metaflow Consulting
+- Offering Training Courses
+- Paid Video Course Content
+
+\*continuing with a performance-based fee based on OB conversions or other proxy metrics that you think makes sense.
+
+---
+
+#### Team
+
+I have a former colleague that I'd want to include if going down this route that I'm envisioning owning the video side of content creation as well as being my foil in the 1:1 Conversation Video content type that's described in [the learn landing page](https://metaflowlabs.nuxt.space/learn#video). She was a star pupil at one of the stops where I onboarded Metaflow and would represent the `Metaflow Learner` archetype that I think is important for creating this kind of content. I'll fill you in on the identity of this mystery person is if we decide to go ahead.
+
+I've successfully built a business from scratch that had the happy ending of being acquired with Priceflow so know what is involved and know that the chances of success grow substantially if I started with a partner rather than going solo (especially one with complementary expertise that I don't have, e.g. video production).
+
+In this scenario I would bring her on after a lot of the preliminary work has been done to focus her time on video tooling and prep.
+
+#### What's in it for OB
+
+This is outlined in the landing page but will reiterate here:
+
+- Have a complementary organization promoting Metaflow that has a direct stake in growing the community
+- Greatly expand marketing reach through collaborating on releases, integrations, and in promoting events
+- Partner on conference booths, organizing Metaflow events, co-promote during talks
+- Feedback from consulting activities would inform Outerbounds product, e.g. **the DBT model**
+- Pipeline of warm leads for OB Platform from Labs consulting / training / courses
+- Dramatically improve Metaflow SEO, especially for LLMs
+
+
+# Embedded
+
+#### Embedded Within Outerbounds
+
+In this path I would be an Outerbounds employee but work outside the normal engineering org structure, focusing on
+the same *fundamental research* work as the consulting engagement path, and covering the same 12-week initial project plan.
+
+The embedded option includes the same revenue-generating activities of:
+
+- Metaflow Consulting
+- Offering Training Courses
+- Paid Video Course Content
+
+---
+
+The difference in this path is *where* the revenue from these activities is allocated. I'm optimistic that the funds
+generated in this capacity would, over time, eclipse my FTE cost and hopefully represent a significant revenue stream.
+Part of this arrangement would be the requirement that revenue generated from consulting/training would be earmarked
+exclusively for growing the Metaflow community as a whole and not Outerbounds proper. These would include line-items for
+more traditional growth such as:
+
+- travel + sponsoring booths at conferences outside the norm such as at
+
+  - [DBT's Coalesce](https://coalesce.getdbt.com/event/21662b38-2c17-4c10-9dd7-964fd652ab44/summary){rel="nofollow"}
+  - [RStudio / Posit Conf](https://posit.co/conference/){rel="nofollow"}
+- funding cash prizes for Metaflow hackathons (hopefully with donated / subsidized OB platform compute :))
+- paying fees for technical staff (Video Editing, Animation)
+- paying engaged community for guest content / high quality example repos (
+  e.g. [Jacopo](https://github.com/jacopotagliabue/you-dont-need-a-bigger-boat){rel="nofollow"})
+- paying high profile non-community members from different domains for guest content / high quality example repos (e.g.
+  AWS Heros)
+- consulting fees for high-profile integrations such as a greenfield R package, DBT integration
